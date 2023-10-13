@@ -29,10 +29,10 @@
         </StackPanel>
         <StackPanel Grid.Row="4" Width="400" Height="75" Orientation="Horizontal">
             <Button x:Name="BuyBt">
-                <Image></Image>
+                <Image Source="/Resources/buy.png" ></Image>
             </Button>
             <Button x:Name="LikeBt">
-                <Image></Image>
+                <Image Source="/Resources/like.png"></Image>
             </Button>
             <Button x:Name="RatingBt">
                 <Image></Image>
