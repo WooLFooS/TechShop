@@ -17,15 +17,15 @@
         <StackPanel Grid.Row="0" Height="200" Width="380">
             <Image x:Name="ImageProduct" ></Image>
         </StackPanel>
-        <Label Grid.Row="1"></Label>
-        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="400" Height="50">
-            <Image></Image>
-            <Label></Label>
-            <Label></Label>
+        <Label Grid.Row="1" x:Name="NameProductLb"></Label>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="400" Height="50" Orientation="Horizontal">
+            <Image Source="/Resources/Zvezda.png" ></Image>
+            <Label Width="130" x:Name="RaitingLb"></Label>
+            <Label Width="130"></Label>
         </StackPanel>
         <StackPanel Grid.Row="3" Width="400" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-            <Label></Label>
-            <Label></Label>
+            <Label Width="200" x:Name="OriginalPriceLb" FontSize="25"></Label>
+            <Label Width="200" x:Name="FirstPriceLb"></Label>
         </StackPanel>
         <StackPanel Grid.Row="4" Width="400" Height="75" Orientation="Horizontal">
             <Button x:Name="BuyBt">
@@ -35,7 +35,7 @@
                 <Image Source="/Resources/like.png"></Image>
             </Button>
             <Button x:Name="RatingBt">
-                <Image></Image>
+                <Image Source="/Resources/Raiting.png" Height="40" ></Image>
             </Button>
         </StackPanel>
     </Grid>

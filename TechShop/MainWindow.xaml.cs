@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TechShop.UserControls;
 
 namespace TechShop
 {
@@ -23,6 +24,7 @@ namespace TechShop
         public MainWindow()
         {
             InitializeComponent();
+            MyFrame.Navigate(new FonesOne());
         }
     }
 }

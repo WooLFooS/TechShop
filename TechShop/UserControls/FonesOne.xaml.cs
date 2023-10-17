@@ -13,22 +13,28 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TechShop.Bases;
+using TechShop.Components;
 
-namespace TechShop.Components
+namespace TechShop.UserControls
 {
     /// <summary>
-    /// Логика взаимодействия для ServiceUserControl.xaml
+    /// Логика взаимодействия для FonesOne.xaml
     /// </summary>
-    public partial class ServiceUserControl : UserControl
+    public partial class FonesOne : Page
     {
-       
-
-        public ServiceUserControl(Product product)
+        public FonesOne()
         {
             InitializeComponent();
-            NameProductLb.Content = product.Title;
-            OriginalPriceLb.Content = product.Cost;
-        }
+            Refresh();
 
+        }
+        public void Refresh()
+        {
+            IEnumerable<Product> serviceSortList = App.db.Product;
+            foreach (var product in serviceSortList)
+            {
+                FonesOneWp.Children.Add(new ServiceUserControl(product));
+            }
+        }
     }
 }

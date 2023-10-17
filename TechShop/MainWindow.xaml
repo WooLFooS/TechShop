@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechShop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" MaxHeight="700" MaxWidth="1350" MinHeight="700" MinWidth="1350">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
@@ -16,7 +16,13 @@
             <RowDefinition Height="313*"/>
             <RowDefinition Height="49*"/>
         </Grid.RowDefinitions>
+        <Rectangle Grid.Column="1" Fill="#FF9460FF"></Rectangle>
+        <Rectangle Grid.Row="1" Fill="#FF9460FF"></Rectangle>
+        <Rectangle Grid.Row="0" Fill="#FF9460FF"></Rectangle>
+        <Rectangle Grid.Row="2" Fill="#FF9460FF"></Rectangle>
+        <Rectangle Grid.Row="2" Grid.Column="1" Fill="#FF9460FF"></Rectangle>
         <Label Grid.Column="1" Content="TechShop" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Width="134"/>
         <Image Source="/Resources/6347567.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Frame x:Name="MyFrame" Grid.Column="1" Grid.Row="1"></Frame>
     </Grid>
 </Window>
