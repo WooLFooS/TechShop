@@ -26,9 +26,15 @@ namespace TechShop.Components
         public ServiceUserControl(Product product)
         {
             InitializeComponent();
-            NameProductLb.Content = product.Title;
-            OriginalPriceLb.Content = product.Cost;
+            NameProductTb.Text = product.Title;
+            ImageProduct.Source = new BitmapImage(new Uri(@"\Resources\6347567.png", UriKind.Relative));
+
+            OriginalPriceLb.Text = product.Cost.ToString();
+            FirstPriceLb.Text = product.costDiscount;
+            DiscountTb.Text = product.DiscountStr;
+            RaitingTb.Text = product.
         }
+        
 
     }
 }

@@ -67,6 +67,7 @@
     <Compile Include="Bases\Feedback.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bases\PartialClass\Product.cs" />
     <Compile Include="Bases\Product.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

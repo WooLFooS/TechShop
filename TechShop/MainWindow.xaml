@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechShop"
         mc:Ignorable="d"
-        Title="MainWindow" MaxHeight="700" MaxWidth="1350" MinHeight="700" MinWidth="1350">
+        Title="MainWindow" MinHeight="890" MinWidth="1700" MaxHeight="890" MaxWidth="1700">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
