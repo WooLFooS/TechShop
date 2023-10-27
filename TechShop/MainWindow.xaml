@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechShop"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="890" MinWidth="1700" MaxHeight="890" MaxWidth="1700">
+        Title="MainWindow"  MinHeight="963" MinWidth="1632" MaxHeight="963" MaxWidth="1632">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
@@ -16,6 +16,10 @@
             <RowDefinition Height="313*"/>
             <RowDefinition Height="49*"/>
         </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <Button></Button>
+            <Button></Button>
+        </StackPanel>
         <Rectangle Grid.Column="1" Fill="#FF9460FF"></Rectangle>
         <Rectangle Grid.Row="1" Fill="#FF9460FF"></Rectangle>
         <Rectangle Grid.Row="0" Fill="#FF9460FF"></Rectangle>
@@ -23,6 +27,6 @@
         <Rectangle Grid.Row="2" Grid.Column="1" Fill="#FF9460FF"></Rectangle>
         <Label Grid.Column="1" Content="TechShop" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Width="134"/>
         <Image Source="/Resources/6347567.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Frame x:Name="MyFrame" Grid.Column="1" Grid.Row="1"></Frame>
+        <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Grid.Column="1" Grid.Row="1"></Frame>
     </Grid>
 </Window>

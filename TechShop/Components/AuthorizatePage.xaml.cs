@@ -13,21 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TechShop.Bases;
-using TechShop.UserControls;
-using TechShop.Components;
 
-namespace TechShop
+namespace TechShop.Components
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для AuthorizatePage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AuthorizatePage : Page
     {
-        public MainWindow()
+        public AuthorizatePage()
         {
             InitializeComponent();
-            Navigation.mainWindow = this;
-            Navigation.NextPage(new PageComponent("Авторизация", new AuthorizatePage()));
+           
+        }
+
+        private void EnterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Список услуг", new ServiceListPage()));
         }
     }
 }

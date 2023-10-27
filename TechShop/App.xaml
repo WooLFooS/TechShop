@@ -18,5 +18,10 @@
             <Setter Property="FontFamily" Value="Monotype Corsiva"></Setter>
             <Setter Property="FontSize" Value="23"/>
         </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Width" Value="250"></Setter>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
     </Application.Resources>
 </Application>

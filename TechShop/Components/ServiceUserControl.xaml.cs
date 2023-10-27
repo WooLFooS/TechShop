@@ -29,10 +29,20 @@ namespace TechShop.Components
             NameProductTb.Text = product.Title;
             ImageProduct.Source = new BitmapImage(new Uri(@"\Resources\6347567.png", UriKind.Relative));
 
-            OriginalPriceLb.Text = product.Cost.ToString();
-            FirstPriceLb.Text = product.costDiscount;
+      
             DiscountTb.Text = product.DiscountStr;
-            RaitingTb.Text = product.
+            RaitingTb.Text = product.OverrideFeedback;
+
+            if(Convert.ToString(product.Discount) != "0")
+            {
+                OriginalPriceLb.Text = Convert.ToString(product.Cost) + "";
+                FirstPriceLb.Text = Convert.ToString(Convert.ToDouble(product.Cost) - (Convert.ToDouble(product.Cost) * (product.Discount / 100))) + "";
+            }
+            else
+            {
+                FirstPriceLb.Text = product.Cost + "";
+                OriginalPriceLb.Text = "";
+            }
         }
         
 

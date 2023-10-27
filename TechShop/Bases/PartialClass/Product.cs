@@ -10,21 +10,21 @@ namespace TechShop.Bases
 {
     partial class Product
     {
-        public string costDiscount
-        { 
+
+        public decimal costDiscount
+        {
             get
             {
-                if(Discount == 0)
+                if (Discount == 0)
                 {
-                    return "";
+                    return Cost;
                 }
                 else
                 {
-                    return $"{Cost - (Cost * (decimal) Discount/100)}";
+                    return Cost - (Cost * (decimal)Discount);
                 }
             }
         }
-        
         public string DiscountStr
         {
             get
@@ -37,6 +37,26 @@ namespace TechShop.Bases
                 {
                     return $"{Discount}%";
                 }
+            }
+        }
+        public string OverrideFeedback
+        {
+            get
+            {
+                double sum = 0;
+
+                foreach (var item in Feedback)
+                {
+                    sum += item.Evaluation;
+                }
+                if (Feedback.Count() >= 11 && Feedback.Count() <= 19)
+                    return $" {(sum / Feedback.Count()).ToString("N2")} {Feedback.Count()} отзывов";
+                else if (Feedback.Count() == 1 || Feedback.Count() % 10 == 1)
+                    return $" {(sum / Feedback.Count()).ToString("N2")} {Feedback.Count()} отзывов";
+                else if (Feedback.Count() % 10 >= 2 || Feedback.Count() % 10 <= 4)
+                    return $" {(sum / Feedback.Count()).ToString("N2")} {Feedback.Count()} отзывов";
+                else
+                    return $" {(sum / Feedback.Count()).ToString("N2")} {Feedback.Count()} отзывов";
             }
         }
     }
