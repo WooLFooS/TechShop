@@ -24,6 +24,10 @@ namespace TechShop.Components
         public ServiceListPage()
         {
             InitializeComponent();
+            if(!App.isAdmin)
+            {
+                AddBtn.Visibility = Visibility.Hidden;
+            }
             Refresh();
 
         }
@@ -31,16 +35,33 @@ namespace TechShop.Components
         {
             IEnumerable<Product> serviceSortList = App.db.Product;
 
-            if (SortCb.SelectedIndex != 0)
+            
+            if(SortCb.SelectedIndex == 1)
             {
-                if (SortCb.SelectedIndex == 1)
-                {
-                    serviceSortList = serviceSortList.OrderBy(x => x.costDiscount);
-                }
-                else
-                {
-                    serviceSortList = serviceSortList.OrderByDescending(x => x.costDiscount);
-                }
+                serviceSortList = serviceSortList.OrderBy(x => x.Cost);
+            }
+            else if(SortCb.SelectedIndex == 2)
+            {
+                serviceSortList = serviceSortList.OrderByDescending(x => x.Cost);
+            }
+
+            if (DiscountFiltrCb.SelectedIndex != 0)
+            {
+                if (DiscountFiltrCb.SelectedIndex == 1)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 0 && x.Discount < 5);
+                if (DiscountFiltrCb.SelectedIndex == 2)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 5 && x.Discount < 15);
+                if (DiscountFiltrCb.SelectedIndex == 3)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 15 && x.Discount < 30);
+                if (DiscountFiltrCb.SelectedIndex == 4)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 30 && x.Discount < 70);
+                if (DiscountFiltrCb.SelectedIndex == 5)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 70 && x.Discount < 100);
+            }
+            if (SearchTb.Text != null)
+            {
+                serviceSortList = serviceSortList.Where(x => x.Title.ToLower().Contains(SearchTb.Text.ToLower()) ||
+                x.Description.ToLower().Contains(SearchTb.Text.ToLower()));
             }
 
             ServiceWp.Children.Clear();

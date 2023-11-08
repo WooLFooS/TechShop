@@ -29,6 +29,15 @@ namespace TechShop.Components
 
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
+            if(PasswordPb.Password == "0000")
+            {
+                App.isAdmin = true;
+                MessageBox.Show("Good Morning Vietnam");
+            }
+            else
+            {
+                MessageBox.Show("Goodbye Vietnam");
+            }
             Navigation.NextPage(new PageComponent("Список услуг", new ServiceListPage()));
         }
     }

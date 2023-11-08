@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechShop"
         mc:Ignorable="d"
-        Title="MainWindow"  MinHeight="963" MinWidth="1632" MaxHeight="963" MaxWidth="1632">
+        Title="MainWindow"  MinHeight="970" MinWidth="1650" MaxHeight="970" MaxWidth="1650">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
@@ -20,13 +20,16 @@
             <Button></Button>
             <Button></Button>
         </StackPanel>
-        <Rectangle Grid.Column="1" Fill="#FF9460FF"></Rectangle>
-        <Rectangle Grid.Row="1" Fill="#FF9460FF"></Rectangle>
-        <Rectangle Grid.Row="0" Fill="#FF9460FF"></Rectangle>
-        <Rectangle Grid.Row="2" Fill="#FF9460FF"></Rectangle>
-        <Rectangle Grid.Row="2" Grid.Column="1" Fill="#FF9460FF"></Rectangle>
+        <Rectangle Grid.Column="1" Fill="#FFFDF4E3" StrokeThickness="0"/>
+        <Rectangle Grid.Row="1" Fill="#fdf4e3"></Rectangle>
+        <Rectangle Grid.Row="0" Fill="#fdf4e3"></Rectangle>
+        <Rectangle Grid.Row="2" Fill="#fdf4e3"></Rectangle>
+        <Rectangle Grid.Row="2" Grid.Column="1" Fill="#fdf4e3"></Rectangle>
         <Label Grid.Column="1" Content="TechShop" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Width="134"/>
         <Image Source="/Resources/6347567.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Grid.Column="1" Grid.Row="1"></Frame>
+        <Border BorderThickness="3" BorderBrush="Orange" Grid.Column="1" Grid.Row="1">
+            <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Grid.Column="1" Grid.Row="1"></Frame>
+        </Border>
+
     </Grid>
 </Window>

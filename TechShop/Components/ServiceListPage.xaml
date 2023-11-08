@@ -42,6 +42,7 @@
         <StackPanel Grid.Row="2" Background="White">
             <Button x:Name="AddBtn" Width="250" Content="ДОБАВИТЬ" HorizontalAlignment="Left" Margin="300,30,0,0" Click="AddBtn_Click"></Button>
             <TextBlock Margin="500,-60,0,0" x:Name="CountDataTb" Width="200" Height="70"></TextBlock>
+            
         </StackPanel>
     </Grid>
 </Page>

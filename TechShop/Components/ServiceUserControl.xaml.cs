@@ -37,11 +37,19 @@ namespace TechShop.Components
             {
                 OriginalPriceLb.Text = Convert.ToString(product.Cost) + "";
                 FirstPriceLb.Text = Convert.ToString(Convert.ToDouble(product.Cost) - (Convert.ToDouble(product.Cost) * (product.Discount / 100))) + "";
+                FreePriceBd.Background = Brushes.Green;
             }
             else
             {
                 FirstPriceLb.Text = product.Cost + "";
                 OriginalPriceLb.Text = "";
+
+                
+            }
+            if(!App.isAdmin)
+            {
+                EditBtn.Visibility = Visibility.Hidden;
+                DelBtn.Visibility = Visibility.Hidden;
             }
         }
         

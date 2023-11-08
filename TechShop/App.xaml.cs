@@ -15,5 +15,6 @@ namespace TechShop
     public partial class App : Application
     {
         public static HardwareShopNiyazEntities db = new HardwareShopNiyazEntities();
+        public static bool isAdmin = false;
     }
 }

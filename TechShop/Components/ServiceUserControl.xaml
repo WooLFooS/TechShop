@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="590" d:DesignWidth="365">
     <Grid>
-        <Border Background="Black"></Border>
+        <Border Background="Black" x:Name="FreePriceBd"/>
         <Border BorderThickness="3" Background="White"></Border>
         <StackPanel HorizontalAlignment="Center" Width="365">
 
@@ -16,8 +16,9 @@
                 <TextBlock x:Name="DiscountTb" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
             </StackPanel>
 
-            <StackPanel Margin="0 0 0 15">
-                <Button x:Name="EditImageBtn" Width="352">Изменить изображение</Button>
+            <StackPanel Margin="0 0 0 15" Orientation="Horizontal">
+                <Button x:Name="EditBtn" Width="150">Редактировать</Button>
+                <Button x:Name="DelBtn" Margin="45 0 0 0" Width="150">Удалить</Button>
             </StackPanel>
 
             <StackPanel Width="352" Height="50" Margin="0 0 0 15">
