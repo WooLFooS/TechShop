@@ -76,6 +76,9 @@
     <Compile Include="Bases\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Components\AddEditServicePage.xaml.cs">
+      <DependentUpon>AddEditServicePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\AuthorizatePage.xaml.cs">
       <DependentUpon>AuthorizatePage.xaml</DependentUpon>
     </Compile>
@@ -85,6 +88,10 @@
     <Compile Include="UserControls\FonesOne.xaml.cs">
       <DependentUpon>FonesOne.xaml</DependentUpon>
     </Compile>
+    <Page Include="Components\AddEditServicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Components\AuthorizatePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

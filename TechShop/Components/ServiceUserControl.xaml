@@ -17,8 +17,8 @@
             </StackPanel>
 
             <StackPanel Margin="0 0 0 15" Orientation="Horizontal">
-                <Button x:Name="EditBtn" Width="150">Редактировать</Button>
-                <Button x:Name="DelBtn" Margin="45 0 0 0" Width="150">Удалить</Button>
+                <Button x:Name="EditBtn" Width="150" Click="EditBtn_Click">Редактировать</Button>
+                <Button x:Name="DelBtn" Margin="45 0 0 0" Width="150" Click="DelBtn_Click">Удалить</Button>
             </StackPanel>
 
             <StackPanel Width="352" Height="50" Margin="0 0 0 15">

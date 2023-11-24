@@ -21,27 +21,28 @@ namespace TechShop.Components
     /// </summary>
     public partial class ServiceUserControl : UserControl
     {
-       
 
-        public ServiceUserControl(Product product)
+        private Product product;
+        public ServiceUserControl(Product _product)
         {
             InitializeComponent();
-            NameProductTb.Text = product.Title;
+            product = _product;
+            NameProductTb.Text = _product.Title;
             ImageProduct.Source = new BitmapImage(new Uri(@"\Resources\6347567.png", UriKind.Relative));
 
       
-            DiscountTb.Text = product.DiscountStr;
-            RaitingTb.Text = product.OverrideFeedback;
+            DiscountTb.Text = _product.DiscountStr;
+            RaitingTb.Text = _product.OverrideFeedback;
 
-            if(Convert.ToString(product.Discount) != "0")
+            if(Convert.ToString(_product.Discount) != "0")
             {
-                OriginalPriceLb.Text = Convert.ToString(product.Cost) + "";
-                FirstPriceLb.Text = Convert.ToString(Convert.ToDouble(product.Cost) - (Convert.ToDouble(product.Cost) * (product.Discount / 100))) + "";
+                OriginalPriceLb.Text = Convert.ToString(_product.Cost) + "";
+                FirstPriceLb.Text = Convert.ToString(Convert.ToDouble(_product.Cost) - (Convert.ToDouble(_product.Cost) * (_product.Discount / 100))) + "";
                 FreePriceBd.Background = Brushes.Green;
             }
             else
             {
-                FirstPriceLb.Text = product.Cost + "";
+                FirstPriceLb.Text = _product.Cost + "";
                 OriginalPriceLb.Text = "";
 
                 
@@ -52,7 +53,25 @@ namespace TechShop.Components
                 DelBtn.Visibility = Visibility.Hidden;
             }
         }
-        
 
+        private void DelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(product.Feedback.Count != 0)
+            {
+                MessageBox.Show("Запрещено удалять");
+            }
+            else
+            {
+                App.db.Product.Remove(product);
+                App.db.SaveChanges();
+                MessageBox.Show("Удалено: " + product.Title);
+                Navigation.NextPage(new PageComponent("Список услуг", new ServiceListPage()));
+            }
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            new AddEditServicePage(product).ShowDialog();
+        }
     }
 }

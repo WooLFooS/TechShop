@@ -31,7 +31,7 @@
             </ComboBox>
             <StackPanel Orientation="Vertical" Margin="200,20,0,0">
                 <TextBlock>По названию или описанию</TextBlock>
-                <TextBox x:Name="SearchTb" TextChanged="SearchTb_TextChanged"></TextBox>
+                <TextBox x:Name="SearchTb" TextChanged="SearchTb_TextChanged" Width="230"></TextBox>
             </StackPanel>
         </StackPanel>
         

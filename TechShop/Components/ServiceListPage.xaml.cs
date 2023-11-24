@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TechShop.Bases;
+using TechShop.Components;
 
 namespace TechShop.Components
 {
@@ -21,6 +22,8 @@ namespace TechShop.Components
     /// </summary>
     public partial class ServiceListPage : Page
     {
+        private Product product;
+
         public ServiceListPage()
         {
             InitializeComponent();
@@ -89,7 +92,7 @@ namespace TechShop.Components
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new AddEditServicePage(product).ShowDialog();
         }
     }
 }
