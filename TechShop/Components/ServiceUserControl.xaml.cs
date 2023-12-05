@@ -23,6 +23,7 @@ namespace TechShop.Components
     {
 
         private Product product;
+
         public ServiceUserControl(Product _product)
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace TechShop.Components
             {
                 OriginalPriceLb.Text = Convert.ToString(_product.Cost) + "";
                 FirstPriceLb.Text = Convert.ToString(Convert.ToDouble(_product.Cost) - (Convert.ToDouble(_product.Cost) * (_product.Discount / 100))) + "";
-                FreePriceBd.Background = Brushes.Green;
+                FirstPriceLb.Background = Brushes.Green;
             }
             else
             {
@@ -71,7 +72,7 @@ namespace TechShop.Components
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-            new AddEditServicePage(product).ShowDialog();
+            Navigation.mainWindow.MainFrame.Navigate(new AddEditServicePage(product));
         }
     }
 }

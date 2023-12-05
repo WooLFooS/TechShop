@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using TechShop.Components;
 
 namespace TechShop.Bases
 {
@@ -22,6 +23,8 @@ namespace TechShop.Bases
             Update(pageComponent);
             
         }
+
+        
     }
 
     class PageComponent

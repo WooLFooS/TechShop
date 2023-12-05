@@ -92,7 +92,7 @@ namespace TechShop.Components
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            new AddEditServicePage(product).ShowDialog();
+            Navigation.mainWindow.MainFrame.Navigate(new AddEditServicePage(new Product()));
         }
     }
 }
